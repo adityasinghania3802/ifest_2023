@@ -1,0 +1,31 @@
+{% extends 'iohome.html' %}
+{% load static %}
+
+{% block content %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <div class="container my-5">
+        <div class="row justify-content-center mb-4 mx-3">
+            <div class="col-auto text-center">
+                <h1> Your round {{ round }} hunt has ended! </h1>
+                <i>You can only play a round once.</i>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-5 mt-2 mx-4">
+            <div class="col-md-4 col-sm-8 col-12">
+                <img class="mx-5" src="{% static 'images/ended.svg' %}" style="max-width: 100%; min-width: 200px;">
+            </div>
+        </div>
+        {% if time %}
+        <div class="row justify-content-center mb-4 mx-3">
+            <div class="col-auto text-center">
+                <h4> Time Taken: <b>{{ time }}</b></h4>
+            </div>
+        </div>
+        {% endif %}
+        <div class="row justify-content-center mx-3 mb-3">
+            <div class="col-auto">
+                <a href="/home/" class="custbtn btn btn-primary">Return to i.Fest Home.</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

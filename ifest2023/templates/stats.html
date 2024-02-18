@@ -1,0 +1,32 @@
+{% extends 'admin/base.html' %}
+
+{% block title %}
+i.Fest '23 Statistics
+{% endblock %}
+
+{% block content %}
+<h1><b>Total Gold Pass : {{ gold }} </b></h1>
+<h1><b>Registration Statistics</b></h1>
+<h2>Event-Wise Registrations</h2>
+<table>
+    {% for Edata in eventData %}
+    <tr>
+        <td>{{ Edata.event__name }}</td>
+        <td>:</td>
+        <td>{{ Edata.count }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h2>College-Wise Registrations</h2>
+<table>
+    {% for Cdata in collegeData %}
+    <tr>
+        <td>{{ Cdata.university }}</td>
+        <td>:</td>
+        <td>{{ Cdata.count }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

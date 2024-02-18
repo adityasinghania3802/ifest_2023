@@ -1,0 +1,58 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/members.css' %}">
+
+<body>
+
+
+  <div class="heading mt-5 pt-4">
+    <h1>Team</h1>
+  </div>
+
+
+
+  <div class="container py-4">
+    <div class="row team-box justify-content-center">
+      {% for team, data in ifest.items %}
+      <div class="heading col-md-10 my-3 text-center">
+        <h2 class="pb-0" style="font-size: 2rem;"><b>{{ team }}</b></h2>
+      </div>
+      {% for name, phn in data.items %}
+      <div class="col-md-3 col-sm-8 col-11 m-4 box">
+        <div class="row p-0">
+          <div class="col-md-12 text-center p-0">
+            <img style="width: 100%;" src="{% static 'images/member/'|add:name|cut:' '|add:'.jpg' %}">
+          </div>
+          <div class="info col-md-12 p-3 text-center">
+            <h5><b>{{ name }}</b></h5>
+ 
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      <div class="mb-5"></div>
+      {% endfor %}
+    </div>
+  </div>
+
+
+
+  <div class="kaleidoscope pie" style="z-index: -19;">
+    <div class="pie__corner">
+      <div class="pie__container">
+        <div class="pie__piece"></div>
+        <div class="pie__piece"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+  <script src="{% static 'js/moreInfo.js' %}"></script>
+
+</body>
+
+{% endblock %}

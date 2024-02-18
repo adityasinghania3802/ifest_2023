@@ -1,0 +1,127 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/speakers.css' %}">
+
+<body>
+
+
+    <div class="heading mt-5 pt-4">
+        <h1>Speakers</h1>
+    </div>
+
+
+
+    <div class="container mt-3">
+        <div class="row justify-content-center mx-3">
+
+            <div class="box col-md-10 col-12 mt-5 mb-4 p-4 mx-3">
+                <div class="row">
+                    <div class="col-md-4 my-auto">
+                        <img style="width: 100%; border: solid #f1f1f1;"src="{% static 'images/speakers/safin_hasan.jpeg' %}">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="speaker_header mt-3">
+                            <h1><b>Safin Hasan</b></h1>
+                            <h4 style="color: #cd25c7; font-weight: bold;">India's Youngest IPS Officer</h4>
+                            <span class="minutes">November 5, 2023</span>
+                            <p class="type">
+                                11:00 AM Onwards</p>
+                        </div>
+                        <div class="speaker_desc">
+                            <p class="text" style="text-align: justify;">
+                                Being India's Youngest IPS Officer, Mr. Hasan embodies the spirit of unwavering
+                                determination and resilience. Despite facing numerous challenges, including a
+                                life-altering accident on the way to his exam and battling health issues, his
+                                determination remained unshaken. He not only appeared for the UPSC exam but also
+                                excelled, securing the second-highest rank in the interview round. Today, he proudly
+                                serves as Deputy Commissioner of Police Traffic(East) in Ahmedabad City, proving that
+                                with a strong will, there is always a way.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box col-md-10 col-12 mt-5 mb-4 p-4">
+                <div class="row">
+                    <div class="col-md-4 my-auto ">
+                        <img style="width: 100%; border: solid #f1f1f1;"
+                            src="{% static 'images/speakers/jatin_chaudhary.jpg' %}">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="speaker_header mt-3">
+                            <h1><b>Jatin Chaudhary</b></h1>
+                            <h4 style="color: #cd25c7; font-weight: bold;">Founder of eChai Ventures</h4>
+                            <span class="minutes">November 4, 2023</span>
+                            <p class="type">11:00 AM Onwards</p>
+                        </div>
+                        <div class="speaker_desc">
+                            <p class="text" style="text-align: justify;">
+                                Recognised leader in the entrepreneurial and social impact space, Jatin Chaudhary is a
+                                distinguished speaker in i.Fest. His Global Startup Network eChai is a groundbreaking
+                                online social networking platform that is dedicated to helping entrepreneurs discover
+                                and connect with like-minded individuals. With a remarkable track record of empowering
+                                young entrepreneurs and fostering economic opportunities, Jatin brings a wealth of
+                                experience and insight making it an invaluable opportunity for attendees to learn from
+                                his expertise.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        
+        <div class="box col-md-10 col-12 mt-5 mb-4 p-4 mx-3">
+            <div class="row">
+                <div class="col-md-4 my-auto">
+                    <img style="width: 100%; border: solid #f1f1f1;"src="{% static 'images/speakers/ShiroyMehta.jpg' %}">
+                </div>
+                <div class="col-md-8">
+                    <div class="speaker_header mt-3">
+                        <h1><b>Shiroy Mehta</b></h1>
+                        <h4 style="color: #cd25c7; font-weight: bold;">CEO of Aava Natural Mineral Water</h4>
+                        <span class="minutes">November 5, 2023</span>
+                        <p class="type">
+                            5:00 PM Onwards</p>
+                    </div>
+                    <div class="speaker_desc">
+                        <p class="text" style="text-align: justify;">
+                            
+Managing Director and CEO, Aava Natural Mineral Water
+
+Shiroy Mehta is a visionary figure and trailblazer in the natural mineral water and premium beverages market, serving as the CEO of Aava Natural Mineral Water and co-founding Tea Lab India. His ability in negotiation, business development, and sales management reflects his strategic skill.
+
+He pursued B.Tech. in Information and Communication Technology from DA-IICT, standing as an exemplary alumnus of our institution. Subsequently, he completed an MBA from IIM Ahmedabad, one of India's premier institutes.
+
+His understanding of technology and business administration shines through in his company's continuous integration of technology solutions.
+
+His exceptional industry experience and strategic skills make him an exemplary figure and an influential speaker in the realm of business and leadership.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    <div class="kaleidoscope pie" style="z-index: -19;">
+        <div class="pie__corner">
+            <div class="pie__container">
+                <div class="pie__piece"></div>
+                <div class="pie__piece"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src="{% static 'js/moreInfo.js' %}"></script>
+
+</body>
+
+{% endblock %}

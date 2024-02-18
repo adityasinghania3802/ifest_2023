@@ -1,0 +1,108 @@
+@font-face {
+  font-family: Nasalization;
+  src: url(../fonts/nasalization-rg.otf);
+}
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@400;700&display=swap');
+
+*{
+  font-family: 'Saira', sans-serif;
+  color: #ffffff;
+}
+
+body{ 
+  background-color: black;
+  color: rgb(255, 255, 255);
+  height: 100%;
+}
+
+.heading h1{
+  font-size: 4rem;
+    letter-spacing: 10px;
+    font-family: Orbitron !important;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 4px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+}
+
+
+@media screen and (max-width: 768px) {
+  .heading h1{
+      font-size: 3rem;
+      letter-spacing: 2px;
+  }
+}
+
+
+.box{
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0px 2px 8px rgba(60, 1, 136, 0.2);
+  border-radius: 20px;
+  border: 1px solid rgba(170, 0, 255, 0.33);
+}
+
+.box:hover{
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 4px 0px 4px 4px rgba(60, 1, 136, 0.7);
+  border-radius: 20px;
+  border: 1px solid rgba( 255, 255, 255, 0.15);
+}
+
+
+.pie {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 15rem;
+  overflow: hidden;
+}
+
+.pie__corner {
+  width: 35rem;
+  height: 35rem;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10rem 10rem 0 10rem;
+}
+
+.pie__corner:nth-child(2) {
+  transform: rotate(90deg);
+}
+
+.pie__corner:nth-child(3) {
+  transform: rotate(270deg);
+}
+
+.pie__corner:nth-child(4) {
+  transform: rotate(180deg);
+}
+
+.pie__container {
+  position: absolute;
+  width: 22.5rem;
+  height: 45rem;
+  top: 50%;
+  left: 50%;
+  display: block;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.pie__piece {
+  width: 22.5rem;
+  height: 22.5rem;
+  background-image: url("../images/eventsback4.jpeg");
+
+  background-size: cover;
+  background-position: 50% 50%;
+  filter: brightness(40%);
+  /* filter: blur(1px); */
+}
+
+.pie__piece:nth-child(2) {
+  transform: scale(1, -1);
+}

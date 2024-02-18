@@ -1,0 +1,221 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/moreInfo.css' %}">
+
+<body>
+
+<div class="event-name-heading mt-5 pt-4 text-center">
+    <h1 style="font-weight: bold;">{{ event.name }}</h1>
+</div>
+
+
+<div class="container mt-4">
+    <div class="row mx-3">
+        <div class="col-md-12 event-info mb-4">
+            <p class="text-center" style="font-family: Geo;">
+                {{event.Data.Info}}
+            </p>
+        </div>
+
+
+        {% if event.Data.GeneralRules %}
+        <div class="col-md-12 event-generalrules mb-4">
+            <h3 class="event-generalrules-heading "><b style="color:#00ccff; font-family: Orbitron;">General Rules</b></h3>
+            <ul class="px-4 rls">
+                {% for rule in event.Data.GeneralRules %}
+                <li>{{rule}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {% if event.Data.CriteriaOfTriumph %}
+        <div class="col-md-12 event-generalrules mb-4">
+            <h3 class="event-generalrules-heading mx-4 pb-1 mb-2 data-underline"><b style="color:#00ccff; font-family: Orbitron;">Criteria Of Triumph</b></h3>
+            <ul class="px-4 rls">
+                {% for rule in event.Data.CriteriaOfTriumph %}
+                <li>{{rule}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {% if event.Data.DimensionsAndFabrications %}
+        <div class="col-md-12 event-generalrules mb-4">
+            <h3 class="event-generalrules-heading mx-4 pb-1 mb-2 data-underline"><b style="color:#00ccff; font-family: Orbitron;">Dimensions And Fabrications</b></h3>
+            <ul class="px-4 rls">
+                {% for rule in event.Data.DimensionsAndFabrications %}
+                <li>{{rule}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {% for round in event.Data.Rounds %}
+        <div class="col-md-12 event-roundrules mb-4">
+            <h3 class="event-generalrules-heading mx-4 pb-1 mb-2 data-underline"><b style="color:#00ccff; font-family: Orbitron;">Round {{ round.ID }}</b></h3>
+            <ul class="px-4 rls">
+                {% for rule in round.Rules %}
+                <li>{{rule}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+
+            {% if not event.Data.WPLink == '#' %}
+                <div class="round-link mb-4">
+                    <h3 class="event-info-heading text-center">
+                        <a href="{{ event.Data.WPLink }}" target="_blank" style="color: #25D366;">
+                            <b><i style="color: #25D366; font-family: Orbitron;"> WhatsApp Group Link </i></b>
+                        </a>
+                    </h2>
+                </div>
+            {% endif %}
+
+
+        {% if event.Data.Link %}
+            <div class="round-link mb-4">
+                <h3 class="event-info-heading text-center">
+                    <a href="{{ event.Data.Link }}" target="_blank" style="color: #00ccff;">
+                        <b><i style="color: #00ccff; font-family: Orbitron;">{{ event.Data.LinkDesc }}</i></b>
+                    </a>
+                </h2>
+            </div>
+        {% endif %}
+
+        {% if event.Data.Link2 %}
+            <div class="round-link mb-4">
+                <h3 class="event-info-heading text-center">
+                    <a href="{{ event.Data.Link2 }}" target="_blank" style="color: #00ccff;">
+                        <b><i style="color: #00ccff; font-family: Orbitron;">{{ event.Data.LinkDesc2 }}</i></b>
+                    </a>
+                </h2>
+            </div>
+        {% endif %}
+
+        {% if user.is_authenticated and user.profile.payment %}
+            {% if not event.Data.RLinkDesc == '' %}
+            <div class="round-link mb-4">
+                <h3 class="event-info-heading text-center">
+                    <a href="{{ event.Data.RLink }}" target="_blank" style="color: #00ccff;">
+                        <b><i style="color: #00ccff; font-family: Orbitron;">{{ event.Data.RLinkDesc }}</i></b>
+                    </a>
+                </h2>
+            </div>
+            {% endif %}
+            {% if not event.Data.RLinkDesc2 == '' %}
+            <div class="round-link mb-4">
+                <h3 class="event-info-heading text-center">
+                    <a href="{{ event.Data.RLink2 }}" target="_blank" style="color: #00ccff;">
+                        <b><i style="color: #00ccff; font-family: Orbitron;">{{ event.Data.RLinkDesc2 }}</i></b>
+                    </a>
+                </h2>
+            </div>
+            {% endif %}
+        {% endif %}
+
+        {% if user.is_authenticated and user.profile.payment %}
+            {% if event.Data.Links %}
+            <div class="mb-3">
+                <div class="col-md-12 event-prize mb-3 mt-3 text-center">
+                    <h2 class="prize-heading mx-4"><b style="font-family: Orbitron; color: #00ccff;">Game Registration Links</b></h2>
+                </div>
+                {% for desc, link in event.Data.Links.items %}
+                {% if not link == '#' %}
+                <div class="round-link mb-3">
+                    <h3 class="event-info-heading text-center">
+                        <a href="{{ link }}" target="_blank" style="color: #00ccff; text-decoration: none;">
+                            <b><i style="color: #00ccff; font-family: Orbitron;">{{ desc }}</i></b>
+                        </a>
+                    </h2>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+            {% endif %}
+        {% endif %}
+
+        <div class="col-md-12 event-prize mb-3 mt-3 text-center">
+            <h2 class="prize-heading mx-4 "><b style="font-family: Orbitron;">Prizes Worth: </b> <b style="color:#e500dd; font-family: Orbitron;"> {{event.Data.Prize}} </b> </h2>
+        </div>
+
+        {% if register %}
+        <div class="col-md-12 event-registration text-center">
+            {% if now.date < event.registrationDeadline.date %}
+                {% if user.is_authenticated %}
+                <form method="POST">
+                {% csrf_token %}
+                    <button type="submit" class="btn btn-primary btn-lg">{{ button }}</button>
+                </form>
+                {% else %}
+                <form method="GET" action="{% url 'login_page' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary btn-lg">{{ button }}</button>
+                </form>
+                {% endif %}
+            {% elif now.date == event.registrationDeadline.date %}
+                {% if now.time < event.registrationDeadline.time %}
+                    {% if user.is_authenticated %}
+                    <form method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary btn-lg">{{ button }}</button>
+                    </form>
+                    {% else %}
+                    <form method="GET" action="{% url 'login_page' %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary btn-lg">{{ button }}</button>
+                    </form>
+                    {% endif %}
+
+                {% else %}
+                    <div class="registration-verdict text-center">
+                        <h2 class="text-danger blink-hard">Registration Closed</h2>
+                    </div>
+                {% endif %}
+            {% else %}
+                <div class="registration-verdict text-center">
+                    <h2 class="text-danger blink-hard">Registration Closed</h2>
+                </div>
+            {% endif %}
+        </div>
+
+        {% else %}
+
+        {% if event.Data.RegLink %}
+            <div class="col-md-12 event-registration text-center">
+                <h2 style="font-weight: bold;" class="text-danger blink-hard">
+                    <a class="link-btn btn" href="{{ event.Data.RegLink }}" style="text-decoration: none;">Register</a>
+                </h2>
+            </div>
+            {% else %}
+            <div class="col-md-12 event-registration text-center">
+                <div class="registration-verdict text-center">
+                    <h2 style="font-weight: bold;" class="text-danger blink-hard">Registration Closed</h2>
+                </div>
+            </div>
+            {% endif %}
+
+        {% endif %}
+    </div>
+</div>
+
+
+<div class="kaleidoscope pie" style="z-index: -10;">
+    <div class="pie__corner">
+        <div class="pie__container">
+        <div class="pie__piece"></div>
+        <div class="pie__piece"></div>
+        </div>
+    </div>
+</div>
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+<script src="{% static 'js/moreInfo.js' %}"></script>
+
+</body>
+
+{% endblock %}

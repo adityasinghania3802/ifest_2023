@@ -1,0 +1,58 @@
+{% extends 'homeganith.html' %}
+{% load static %}
+
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css\puzzle.css' %}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<body>
+
+    <div class="container my-5 ml-sm-5 back">
+        <form action="{% url 'iganith:next_question' question.question_id %}" method="POST" enctype="multipart/form-data" class="forms">
+            {% csrf_token %}
+        <div class="row justify-content-center mx-2">
+            {% if question.question_image.url %}
+            <div class="col-md-7 col-sm-8 col-12 mb-5 justify-content-center" >
+            <img class="mx-auto d-flex" src="../../{% static '/images/iganithquestion/P-' %}{{ question.question_id }}.png" style=" width:100%;"/>
+
+            </div>
+            {% endif %}
+            <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+                <label class="options">Option 1
+                    <input type="radio" name="answer" value="ans1">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="options">Option 2
+                    <input type="radio" name="answer" value="ans2">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="options">Option 3
+                    <input type="radio" name="answer" value="ans3">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="options">Option 4
+                    <input type="radio" name="answer" value="ans4">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="ml-5" style="padding-left: 15px;">
+                <button class="btn btn-success" style="background-color: #44008d;">Next Question</button>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-8 col-12 mb-5 justify-content-center text-center">
+            <div class="mx-auto d-flex" style="padding-left: 25px; padding-top: 15px; text-align: center;">
+            <h4 style="color: red; text-align: center;">You have {{ chance  }} chances left</h4>
+            </div>
+        </div>
+
+    </form>
+    </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+
+{% endblock %}

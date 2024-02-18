@@ -1,0 +1,404 @@
+* {
+  /* margin: 0;
+  padding: 0; */
+  /* font-family: "Geo", monospace; */
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  background: #222;
+}
+
+body {
+ background: #000;
+ /* color: #fff; */
+ /* font-family: "Quicksand", sans-serif; */
+}
+
+.mInfo-main {
+  width: 100%;
+  overflow: hidden;
+
+}
+
+.main-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+  padding-right: 8px;
+  padding-top: 10px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 20px;
+
+}
+
+/* Common for multiple portions */
+
+.event-name,
+.event-info,
+.event-generalrules,
+.round-info,
+.event-prize,
+.event-registeration,
+.event-roundrules {
+
+  line-height: 1em;
+  font-size: 1.5em;
+  height: fit-content;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  /* font-family: "Courier Prime", monospace; */
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 4px;
+}
+
+.event-generalrules {
+   line-height: 1.5em;
+   letter-spacing: 1px;
+}
+
+.round-display-toggle {
+  display: none;
+}
+
+.event-image {
+  width: 200px;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  /* border:1px solid white; */
+  margin: auto;
+}
+
+.event-image img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  /* remove extra space below image */
+}
+
+
+
+.round-heading {
+  border: 2px solid rgb(251, 251, 251);
+  background-color: transparent;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  padding: 5px;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  width: 18%;
+  display: block;
+
+}
+
+.round-heading:hover {
+  transition: all 0.3s ease-in-out;
+  color: #fff;
+  text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px #fff, 0 0 40px red,
+    0 0 80px red, 0 0 90px red, 0 0 100px red, 0 0 150px red;
+  animation: Ayush 0.7s ease-in 0.1s 1 forwards;
+}
+
+.round-link {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding-left: 20px;
+}
+
+.round-rules-description {
+  padding-left: 25px;
+
+}
+
+.round-rules {
+  padding-top: 10px;
+  padding-left: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.judging-criteria {
+  padding-top: 20px;
+  padding-left: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.judging-points {
+  padding-left: 25px;
+
+}
+
+.round-venue {
+  padding-top: 20px;
+  padding-left: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.round-time,
+.round-date,
+.round-contact {
+  padding-top: 10px;
+  padding-left: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+
+}
+
+.round-contact-list {
+  padding-left: 25px;
+}
+
+.prizemoney {
+  text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px #fff, 0 0 40px red,
+    0 0 80px red, 0 0 90px red, 0 0 100px red, 0 0 150px red;
+  font-size: 1.2rem;
+  padding-left: 25px;
+}
+
+.btn-registeration {
+  border: 2px solid white;
+  background-color: transparent;
+  border-radius: 10px;
+  font-size: 1rem;
+  padding: 5px;
+  cursor: pointer;
+  color: whitesmoke;
+  width: 30%;
+  display: block;
+  margin: auto;
+  align-items: center;
+
+}
+
+.btn-registeration:hover {
+  transition: all 0.3s ease-in-out;
+  color: #fff;
+  text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px #fff, 0 0 40px red,
+    0 0 80px red, 0 0 90px red, 0 0 100px red, 0 0 150px red;
+  animation: Ayush 0.7s ease-in 0.1s 1 forwards;
+}
+
+.btn-registeration:hover {
+  transition: all 0.3s ease-in-out;
+  color: #fff;
+  text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px #fff, 0 0 40px red,
+    0 0 80px red, 0 0 90px red, 0 0 100px red, 0 0 150px red;
+  animation: Ayush 0.7s ease-in 0.1s 1 forwards;
+}
+
+@keyframes Ayush {
+  100% {
+    border: 2px solid transparent;
+
+  }
+
+  75% {
+    border: 2px solid rgba(255, 255, 255, 0.151);
+    /* border-radius: 2.5px; */
+  }
+
+  50% {
+    border: 2px solid rgba(255, 255, 255, 0.507);
+    /* border-radius: 5px; */
+  }
+
+  25% {
+    border: 2px solid rgba(255, 255, 255, 0.774);
+    /* border-radius: 7.5px; */
+  }
+
+}
+
+.event-name-heading {
+  font-size: 4rem;
+  letter-spacing: 2px;
+  font-family: Orbitron !important;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 4px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+
+}
+/* .event-name-heading h1 {
+  font-size: 4.5rem;
+} */
+
+.event-info-heading,
+.event-generalrules-heading,
+.prize-heading,
+.event-registeration-heading,
+.text-red,
+.event-rounds-heading {
+  text-align: center;
+  /* text-transform: uppercase; */
+  letter-spacing: 4px;
+  font-size: 1.5rem;
+  color: #09fedd;
+  margin-bottom: 0.8em;
+  margin-top: 1.2em;
+}
+
+/* .event-rounds-heading
+{
+   text-align: center;
+ color: #eee;
+  font-family: "Orbitron", sans-serif;
+ text-transform: uppercase;
+ letter-spacing: 8px;
+ font-size: 2.2rem;
+ color: #fff;
+ text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px rgb(97, 94, 94),
+   0 0 40px rgb(47, 0, 255), 0 0 80px rgb(47, 0, 255), 0 0 90px rgb(47, 0, 255),
+   0 0 100px rgb(47, 0, 255), 0 0 150px rgb(47, 0, 255);
+ margin-bottom: 0.7em;
+margin-top:1.5em; 
+} */
+
+/* Registeration closed */
+
+.text-red {
+  margin-bottom: 0.7em;
+  margin-top: 1.2em;
+  text-align: center;
+  color: red;
+}
+
+.blink-hard {
+  animation: blinker 1s step-end infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+p {
+  padding-bottom: 5px;
+}
+
+.event-generalrules li {
+
+  margin: 0;
+  top: 0;
+  left: 0;
+  padding: 0 5px 0px 30px;
+  list-style: none;
+  background-image: url("/static/images/outline_star_white_18dp.png");
+
+  background-repeat: no-repeat;
+  background-position: 0% 5%;
+  background-size: 17px;
+
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+@media only screen and (max-width: 480px) {
+
+  .btn-registeration,
+  .round-heading {
+    width: fit-content;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .event-image {
+    width: 100px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    /* border:1px solid white; */
+    margin: auto;
+  }
+}
+
+
+
+.header {
+  left: 0%;
+  position: relative;
+  z-index: 100;
+}
+
+.pie {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 15rem;
+  overflow: hidden;
+}
+
+.pie__corner {
+  width: 35rem;
+  height: 35rem;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10rem 10rem 0 10rem;
+}
+
+.pie__corner:nth-child(2) {
+  transform: rotate(90deg);
+}
+
+.pie__corner:nth-child(3) {
+  transform: rotate(270deg);
+}
+
+.pie__corner:nth-child(4) {
+  transform: rotate(180deg);
+}
+
+.pie__container {
+  position: absolute;
+  width: 22.5rem;
+  height: 45rem;
+  top: 50%;
+  left: 50%;
+  display: block;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.pie__piece {
+  width: 22.5rem;
+  height: 22.5rem;
+  background-image: url("../images/eventsback.jpeg");
+
+  background-size: cover;
+  background-position: 50% 50%;
+  filter: brightness(50%);
+  /* filter: blur(1px); */
+}
+
+.pie__piece:nth-child(2) {
+  transform: scale(1, -1);
+}
+
+button {
+ margin-bottom: 50px;
+ font-family: Orbitron;
+ letter-spacing: 2px;
+}
+
+.rls li{
+  font-family: Geo;
+  letter-spacing: 1px;
+}

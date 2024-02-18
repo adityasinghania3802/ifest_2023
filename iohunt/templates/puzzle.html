@@ -1,0 +1,46 @@
+{% extends 'iohome.html' %}
+{% load static %}
+
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/iohunt/puzzle.css' %}">
+<div class="container my-5">
+    <div class="row justify-content-center mx-2">
+        <div class="col-md-10 col-12 question px-4 text-center mb-1 fs-5" style="white-space: pre-line;">
+            {{puzzle.Data.question}}
+        </div>
+        {% if puzzle.Data.image %}
+        <div class="col-md-4 col-sm-8 col-12 mb-3">
+            <img src="{% static 'images/iohunt/'|add:puzzle.Data.image  %}" style="max-width: 100%; min-width: 200px;">
+        </div>
+        {% endif %}
+        <div class="col-md-10 col-12 ansform text-center mb-3">
+            <form method="POST" class="forms">
+                {% csrf_token %}
+                <input class="form-control my-3 mx-auto w-50 px-4 mb-4" style="min-width: 220px;" id="ans" type="text" name="ans" placeholder="Enter Answer Here" required>
+                <button class="custbtn btn btn-primary" type="submit" style="width: 150px;">Check Answer</button>
+            </form> 
+        </div>
+    </div>
+    <div class="row justify-content-center mx-2">
+        {% if messages %}
+            {% for message in messages %}
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                <div class="col-md-auto eval col-12 text-center px-3 py-1 text-success">
+                    {{ message }}
+                </div>
+                {% elif message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                <div class="col-md-auto eval col-12 text-center px-3 py-1 text-danger">
+                    {{ message }}
+                </div>
+                {% else %}
+                <div class="col-md-auto eval col-12 text-center px-3 py-1 text-info">
+                    {{ message }}
+                </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,71 @@
+{% load static %}
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>i.Fest '23 : i.Ohunt</title>
+<link rel="icon" href="{% static 'images/i.Fest_logo_new.png' %}" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{% static 'css/iohunt/iohome.css' %}">
+
+<body>
+{% block content %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <div class="container my-5">
+        <div class="row justify-content-center mb-3 mx-3">
+            <div class="col-md-12 text-center">
+                <h1><b> Welcome to i.Ohunt </b></h1>
+            </div>
+            <div class="col-md-12 event-generalrules mb-4">
+                <h3 class="event-generalrules-heading mx-4 pb-1 mb-2 data-underline"><b>General Rules</b></h3>
+                <ul class="px-4">
+                    <li>There will be 2 rounds in the event.</li>
+                    <li>Round 1 consists of <b>20 questions</b> and Round 2 consists of <b>10 questions.</b></li>
+                    <li>All questions will be of interesting puzzle type.</li>
+                    <li>You will be given some space in the box to type out the answers and then you will have to type out the hints provided from answers into the link of the website in order to move to the next question. A quick demonstration of the same will be shown to you before the event.</li>
+                    <li>Time duration of round 1 will be <b>30 minutes</b> and that of round 2 will be <b>40 minutes.</b></li>
+                    <li>Difficulty of questions will be increased from round 1 to round 2.</li>
+                    <li>Only the eligible candidates after the first round will be able to attempt the second round.</li>
+                    <li>Questions will be unidirectional.</li>
+                </ul>
+            </div>
+
+            <div class="col-md-12 event-generalrules mb-4">
+                <h3 class="event-generalrules-heading mx-4 pb-1 mb-2 data-underline"><b>How to Play ?</b></h3>
+                <ul class="px-4">
+                    <li>The hunt consists of a series of questions.</li>
+                    <li>You must solve every question to move to next.</li>
+                    <li>You should use the check answer button to check whether your answer is correct or not.</li>
+                    <li>After solving a question correctly, you must append its answer to the current page url separated by a '-' to move to the next question.</li>
+                    <li>Let 'ifest.pythonanywhere.com/iohunt/1/start' be the url your current question and let its answer be 'ans1'. The next question will be at the url
+                        'ifest.pythonanywhere.com/iohunt/1/start-ans1'.
+                    </li>
+                    <li><b>All the answers must be written in lowercase without any space.</b></li>
+                    <li>Moving forward in similar fashion, on solving all the puzzles you will successfully solve the hunt.</li>
+                    <li>The one who solves the hunt within the least amount of time proceeds to the next round!</li>
+                </ul>
+            </div>
+        </div>
+
+
+
+        <div class="row justify-content-center mx-3 mb-3">
+            <div class="col-auto">
+                <form method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="custbtn btn btn-primary btn-lg">Start Hunt</button>
+                    <br>
+                    <br>
+                    <div class="messages">
+                        {% if messages %}
+                            {% for message in messages %}
+                                {{ message }}
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+</body>

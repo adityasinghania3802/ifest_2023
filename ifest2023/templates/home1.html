@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>i.Fest 23</title>
+  <link rel="preconnect" href="//ajax.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link rel="dns-prefetch" href="https://use.fontawesome.com">
+<link rel="preconnect" href="https://use.fontawesome.com" crossorigin>
+<link rel="preconnect" href="//cdnjs.cloudflare.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="{% static 'css/Newhome.css' %}">
+
+
+</head>
+<div class="box">
+	<div class="b b1"></div>
+	<div class="b b2"></div>
+	<div class="b b3"></div>
+	<div class="b b4"></div>
+</div>
+<body>
+	<br><br>
+<header class="header" id="header">
+	<nav class="navbar">
+		<a href="#top" class="brand">
+			<a href="https://imgbb.com/"><img src="https://i.ibb.co/1nByY99/Group-113.png" alt="Group-113" border="0" />
+			<div class="logo"></a></div>
+		</a>
+	</nav>
+</header>
+
+<div id="particles-js"></div>
+
+<section class="hero" id="top">
+	<div class="title">
+			<h1 class="intro">
+				<span class="magic">
+					<span class="magic-star">
+						<svg viewBox="0 0 512 512">
+							<path d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" />
+						</svg>
+					</span>
+					<span class="magic-star">
+						<svg viewBox="0 0 512 512">
+							<path d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" />
+						</svg>
+					</span>
+					<span class="magic-star">
+						<svg viewBox="0 0 512 512">
+							<path d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" />
+						</svg>
+					</span>
+					<span class="magic-text">Kaleido Kronos </span>
+				</span>
+			</h1>
+			<a href="{% url 'signup' %}" target="blank"><button type="button">Register Now</button></a>
+	</div>
+	<div class="Animation">
+		<div class="circle"></div>
+		<div class="circle"></div>
+		<div class="circle"></div>
+		<div class="circle"></div>
+	</div>
+			<!-- <h2 class="subheading">Coming Soon..</h2> -->
+</section>
+
+			<ul class="carousel__list" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease">
+			</ul>
+  <script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script>
+<script src='https://kit.fontawesome.com/1ee8f271b9.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.npm.min.js'></script>
+<!-- <script  src="./script.js"></script> -->
+<script>
+  // ================================  LOADER  ====================================== //
+
+setTimeout(() => {
+	const loader = document.querySelector(".box");
+	loader.style.opacity = "0";
+	loader.style.backgroundColor = "transparent";
+	setTimeout(() => {
+		loader.style.display = "none";
+		document.body.style.overflow = "visible";
+	}, 1000);
+}, 3000);
+
+
+
+// ==============================  HERO SPARKLE TEXT  ============================= //
+
+let index = 0,
+	interval = 1000;
+const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+const animate = (star) => {
+	star.style.setProperty("--star-left", `${rand(-10, 100)}%`);
+	star.style.setProperty("--star-top", `${rand(-40, 80)}%`);
+	star.style.animation = "none";
+	star.offsetHeight;
+	star.style.animation = "";
+};
+for (const star of document.getElementsByClassName("magic-star")) {
+	setTimeout(() => {
+		animate(star);
+		setInterval(() => animate(star), 1000);
+	}, index++ * (interval / 3));
+}
+
+// =============================== Particles =============================== //
+
+particlesJS("particles-js", {
+	particles: {
+		number: {
+			value: 400,
+			density: {
+				enable: true,
+				value_area: 2800
+			}
+		},
+		color: {
+			value: "#FFFFFF"
+		},
+		shape: {
+			type: "circle",
+			stroke: {
+				width: 0.5,
+				color: "#152166"
+			},
+			image: {
+				src: "",
+				width: 1,
+				height: 1
+			}
+		},
+		opacity: {
+			value: 1,
+			random: true,
+			anim: {
+				enable: true,
+				speed: 1,
+				opacity_min: 0,
+				sync: false
+			}
+		},
+		size: {
+			value: 2,
+			random: true,
+			anim: {
+				enable: true,
+				speed: 2,
+				size_min: 0,
+				sync: false
+			}
+		},
+		line_linked: {
+			enable: false,
+			distance: 80,
+			color: "#3c2876",
+			opacity: 0,
+			width: 0
+		},
+		move: {
+			enable: true,
+			speed: 0.1,
+			direction: "none",
+			random: true,
+			straight: true,
+			out_mode: "out",
+			bounce: false,
+			attract: {
+				enable: false,
+				rotateX: 1000,
+				rotateY: 2200
+			}
+		}
+	}
+});
+</script>
+
+</body>
+</html>

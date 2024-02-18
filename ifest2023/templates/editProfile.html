@@ -1,0 +1,49 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/edit_profile.css' %}"/>
+
+<body>
+  <div class="shape shape-t"></div>
+  <div class="shape shape-b"></div>
+    <div class="container h-100">
+      <div class="row h-100 m-auto form-cont">
+          <form class="forms p-5 m-auto" method="POST">
+            {% csrf_token %}
+            <div class="mb-4">
+              <h3 class="form-heading">Edit Profile</h3>
+              <div class="text-danger">
+                {% if messages %}
+                  {% for message in messages %}
+                    <h6>{{ message }}</h6>
+                  {% endfor %}
+              {% endif %}
+              </div>
+
+            </div>
+    
+            <div class="mb-3 d-flex">
+              <input type="text" class="form-control me-2" placeholder="First Name" id="email" name="first_name">
+              <input type="text" class="form-control ms-2" placeholder="Last Name" id="email" name="last_name">
+            </div>
+    
+            <div class="section space mb-3">
+                <input type="password"  class="form-control pass" name="university" required placeholder="University">
+            </div>
+            <div class="section space mb-5">
+                <input type="password"  class="form-control pass" name="contact_number" required placeholder="Contact Number">
+            </div>
+            
+            <div class="w-100 d-flex">
+                <a class="btn btn-dark ms-auto" href="{% url 'profile' %}"><b>Back</b></a>
+                <button class="btn btn-primary ms-2"><b>Confirm</b></button>
+            </div>
+           
+          </form>
+      </div>
+    </div>
+</body>
+
+{% endblock %}

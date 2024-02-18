@@ -1,0 +1,130 @@
+@font-face {
+  font-family: Nasalization;
+  src: url(../fonts/nasalization-rg.otf);
+}
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@400;700&display=swap');
+
+*{
+  font-family: 'Saira', sans-serif;
+}
+
+body{ 
+  /* background-image: url(../images/bg.svg); */
+  background-image: linear-gradient(to top right, rgb(1, 0, 32), rgb(2, 6, 43), rgb(0, 29, 41), rgb(0, 38, 54)) !important;
+  background-size: cover !important;
+  color: rgb(255, 255, 255);
+  height: auto;
+}
+
+
+
+.main_container {
+  background: rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  /* border: 1px solid rgba(0, 0, 0, 0.15); */
+  border-radius: 40px;
+  /* margin-top: 80px !important; */
+  margin: auto;
+}
+
+h1,
+h3 {
+  color: #ffffff;
+  /* background: linear-gradient(#48B1CB 15%, #0F5CCC 55%,  #AC48A9 80%);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text; */
+}
+
+h3 {
+  margin-left: 2.5%;
+  
+}
+.heading {
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+input {
+  margin-bottom: 10px;
+  width: 70%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  border-bottom: 2px solid #fff;
+}
+
+label {
+  color: #b2c8df;
+}
+.form-container1 {
+  margin: auto;
+}
+
+.form-container2 {
+  margin-left: 2.5%;
+  margin-right: 2%;
+}
+
+.custom_row {
+  margin: 4 0px auto;
+}
+
+.cointainer1, .cointainer2, .cointainer3 {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  border-radius: 20px;
+}
+
+
+.sub-container1 {
+  text-align: center;
+}
+
+.sub-container2 {
+  font-size: small;
+  line-height: 1.7;
+}
+.reg {
+  margin: 10px auto;
+}
+
+/* MODAL CSS */
+.modal-content {
+  background-color: rgb(30, 30, 30)
+}
+
+.modal-title{
+  color: #ffffff;
+  /* background: linear-gradient(#48B1CB 15%, #0F5CCC 55%,  #AC48A9 80%);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text; */
+}
+
+.myBtn {
+  cursor: pointer;
+  width: 200px;
+  color: rgb(255, 255, 255);
+  border-radius: 20px;
+  font-weight: bold; 
+  background-image: linear-gradient(90deg, #48B1CB, #0F5CCC,  #AC48A9);
+  height: 45px;
+}
+
+#submit-me{
+  cursor: pointer;
+  width: 200px;
+  color: rgb(255, 255, 255);
+  border-radius: 20px;
+  font-weight: bold; 
+  background-image: linear-gradient(90deg, #48B1CB, #0F5CCC,  #AC48A9);
+  height: 45px;
+}
+
+.custom_row p input{
+  width: 100%;
+}

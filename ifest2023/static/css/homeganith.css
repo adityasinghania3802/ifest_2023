@@ -1,0 +1,43 @@
+@font-face {
+    font-family: Nasalization;
+    src: url(../fonts/nasalization-rg.otf);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Saira&display=swap');
+* {
+    font-family: "Saira", sans-serif;
+    color: #ffffff;
+}
+  
+body {
+    /* background-image: url(../../images/iohuntbg.jpg); */
+    background-image: linear-gradient(to top right, rgb(1, 0, 32), rgb(2, 6, 43), #001d29, rgb(0, 38, 54)) !important;
+    color: rgb(255, 255, 255);
+}
+
+input{
+    display: block;
+    height: 45px;
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    border-radius: 10px !important;
+    color: #ffffff !important;
+}
+
+
+.custbtn{
+    border: 2px solid;
+    border-color: #00408095;
+    background-color: rgba(80, 0, 117, 0.427);
+  }
+  
+  .custbtn:hover{
+    transition: all 0.10s ease-in;
+    background-color: black;
+    transform: scale(1.05);
+  }
+
+  .data-underline{
+    font-family: 'Saira', sans-serif;
+    border-bottom: 5px solid;
+    border-image: linear-gradient(to left, rgb(55, 0, 75),  #00344b) 1;
+  }
